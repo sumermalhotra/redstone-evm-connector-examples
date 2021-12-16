@@ -33,6 +33,7 @@ describe("Example contract", function () {
     await exampleContract.authorizeProvider();
     await exampleContract.setPrice();
     const priceFromContract = await exampleContract.getLastPrice();
+    console.log(priceFromContract.toNumber());
     expect(arePricesSimilar(priceFromContract, tslaPrice)).to.equal(true);
   });
 
